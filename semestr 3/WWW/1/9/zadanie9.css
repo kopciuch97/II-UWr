@@ -1,0 +1,76 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);
+
+body {
+  width: 80%;
+  border: 20px solid #bdc3c7;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+.post {
+  margin-bottom: 20px;
+  margin: 0, 20px;
+}
+
+.date {
+  color: #3498db;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+.quote{
+  border-left: 5px solid #bdc3c7;
+  padding-left: 5px;
+}
+
+h2 {
+  font-size: 2.0rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+hr{
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header{
+    font-family: inherit;
+    font-size: 3.0rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+nav{
+    height: 40px;
+    background-color: #bdc3c7;
+    text-align: center;
+    margin: 20px 0;
+}
+
+ul >li{
+    display: inline;
+    padding: 0 20px;
+    color: #2c3e50;
+    font-size: 1.6em;
+    width: 132px;
+}
+
+
+ul{
+    width:auto;
+    display: inline-block;
+    padding: : 0;
+    line-height: 200%;
+    margin: 0
+}
+footer{
+    height: 30px;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+}

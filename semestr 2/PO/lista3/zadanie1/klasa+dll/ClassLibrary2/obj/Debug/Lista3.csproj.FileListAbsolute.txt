@@ -1,0 +1,4 @@
+c:\users\clicker\documents\visual studio 2017\Projects\ClassLibrary2\ClassLibrary2\bin\Debug\Lista3.dll
+c:\users\clicker\documents\visual studio 2017\Projects\ClassLibrary2\ClassLibrary2\bin\Debug\Lista3.pdb
+c:\users\clicker\documents\visual studio 2017\Projects\ClassLibrary2\ClassLibrary2\obj\Debug\Lista3.dll
+c:\users\clicker\documents\visual studio 2017\Projects\ClassLibrary2\ClassLibrary2\obj\Debug\Lista3.pdb

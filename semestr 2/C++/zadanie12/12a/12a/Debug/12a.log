@@ -1,0 +1,4 @@
+﻿  zad1.cpp
+c:\users\szymon\desktop\semestr 2\c++\do oddania\12\12a\12a\zad1.cpp(64): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  12a.vcxproj -> C:\Users\Szymon\Desktop\semestr 2\C++\do oddania\12\12a\Debug\12a.exe
+  12a.vcxproj -> C:\Users\Szymon\Desktop\semestr 2\C++\do oddania\12\12a\Debug\12a.pdb (Full PDB)

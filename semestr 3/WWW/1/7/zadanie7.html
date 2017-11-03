@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Przelew - zadanie 7 </title>
+    <style>
+        input{
+            margin-bottom: 5px;
+        }
+    </style>
+    <meta charset="utf-8">
+</head>
+<body>
+    <form>
+        <div>
+            <!--<label for="number">Numer konta</label>--> 
+            <input type="text" id="numerkonta" name="nr_konta" placeholder="Numer konta" required>
+            <input type="text" id="imie" name="imie" placeholder="Imie" required>
+            <input type="text" id="nazwisko" name="nazwisko" placeholder="Nazwisko" required>
+        </div>
+        <div>
+            <input type="email" id="email" name="email" placeholder="example@example.com" required> 
+        </div>
+        <div>
+            <input type="text" id="zip" name="zip" placeholder="00-000" required>
+            <input type="text" id="miasto" name="miasto" placeholder="Miejscowosc" required>
+        </div>
+        <div>
+            <label for="data">Data przelewu:</label>
+            <input type="date" id="data" name="data" required>
+            <input type="text" id="kwota" name="kwota" placeholder="Kwota przelewu" required>
+        </div>
+        
+        <input type="submit">
+        
+         
+        
+        
+    </form>
+</body>
+</html>

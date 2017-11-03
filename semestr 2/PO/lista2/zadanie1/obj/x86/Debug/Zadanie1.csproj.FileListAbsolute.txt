@@ -1,0 +1,10 @@
+C:\Users\Clicker\Desktop\Zadanie1\obj\x86\Debug\Zadanie1.csprojResolveAssemblyReference.cache
+C:\Users\Clicker\Desktop\Zadanie1\bin\Debug\ConsoleApplication.exe
+C:\Users\Clicker\Desktop\Zadanie1\bin\Debug\ConsoleApplication.pdb
+C:\Users\Clicker\Desktop\Zadanie1\obj\x86\Debug\ConsoleApplication.exe
+C:\Users\Clicker\Desktop\Zadanie1\obj\x86\Debug\ConsoleApplication.pdb
+C:\Users\Szymon\Desktop\semestr 2\PO\lista2\zadanie1\obj\x86\Debug\ConsoleApplication.exe
+C:\Users\Szymon\Desktop\semestr 2\PO\lista2\zadanie1\obj\x86\Debug\ConsoleApplication.pdb
+C:\Users\Szymon\Desktop\semestr 2\PO\lista2\zadanie1\bin\Debug\ConsoleApplication.exe
+C:\Users\Szymon\Desktop\semestr 2\PO\lista2\zadanie1\bin\Debug\ConsoleApplication.pdb
+C:\Users\Szymon\Desktop\semestr 2\PO\lista2\zadanie1\obj\x86\Debug\Zadanie1.csprojResolveAssemblyReference.cache

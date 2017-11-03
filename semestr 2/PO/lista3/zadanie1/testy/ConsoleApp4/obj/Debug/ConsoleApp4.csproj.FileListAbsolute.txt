@@ -1,0 +1,15 @@
+c:\users\clicker\documents\visual studio 2017\Projects\ConsoleApp4\ConsoleApp4\bin\Debug\ConsoleApp4.exe.config
+c:\users\clicker\documents\visual studio 2017\Projects\ConsoleApp4\ConsoleApp4\bin\Debug\ConsoleApp4.exe
+c:\users\clicker\documents\visual studio 2017\Projects\ConsoleApp4\ConsoleApp4\bin\Debug\ConsoleApp4.pdb
+c:\users\clicker\documents\visual studio 2017\Projects\ConsoleApp4\ConsoleApp4\obj\Debug\ConsoleApp4.csprojResolveAssemblyReference.cache
+c:\users\clicker\documents\visual studio 2017\Projects\ConsoleApp4\ConsoleApp4\obj\Debug\ConsoleApp4.exe
+c:\users\clicker\documents\visual studio 2017\Projects\ConsoleApp4\ConsoleApp4\obj\Debug\ConsoleApp4.pdb
+C:\Users\Clicker\Documents\Visual Studio 2017\Projects\ConsoleApp4\ConsoleApp4\bin\Debug\Lista3.dll
+C:\Users\Clicker\Documents\Visual Studio 2017\Projects\ConsoleApp4\ConsoleApp4\bin\Debug\Lista3.pdb
+C:\Users\Szymon\Desktop\semestr 2\PO\lista3\zadanie1\testy\ConsoleApp4\bin\Debug\ConsoleApp4.exe.config
+C:\Users\Szymon\Desktop\semestr 2\PO\lista3\zadanie1\testy\ConsoleApp4\obj\Debug\ConsoleApp4.exe
+C:\Users\Szymon\Desktop\semestr 2\PO\lista3\zadanie1\testy\ConsoleApp4\obj\Debug\ConsoleApp4.pdb
+C:\Users\Szymon\Desktop\semestr 2\PO\lista3\zadanie1\testy\ConsoleApp4\bin\Debug\ConsoleApp4.exe
+C:\Users\Szymon\Desktop\semestr 2\PO\lista3\zadanie1\testy\ConsoleApp4\bin\Debug\ConsoleApp4.pdb
+C:\Users\Szymon\Desktop\semestr 2\PO\lista3\zadanie1\testy\ConsoleApp4\bin\Debug\Lista3.pdb
+C:\Users\Szymon\Desktop\semestr 2\PO\lista3\zadanie1\testy\ConsoleApp4\obj\Debug\ConsoleApp4.csprojResolveAssemblyReference.cache

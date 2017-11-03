@@ -1,0 +1,11 @@
+c:\users\clicker\documents\visual studio 2017\Projects\ConsoleApp3\ConsoleApp3\bin\Debug\ConsoleApp3.exe.config
+c:\users\clicker\documents\visual studio 2017\Projects\ConsoleApp3\ConsoleApp3\bin\Debug\ConsoleApp3.exe
+c:\users\clicker\documents\visual studio 2017\Projects\ConsoleApp3\ConsoleApp3\bin\Debug\ConsoleApp3.pdb
+c:\users\clicker\documents\visual studio 2017\Projects\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.exe
+c:\users\clicker\documents\visual studio 2017\Projects\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.pdb
+C:\Users\Szymon\Desktop\semestr 2\PO\lista2\Zadanie4\bin\Debug\ConsoleApp3.exe.config
+C:\Users\Szymon\Desktop\semestr 2\PO\lista2\Zadanie4\obj\Debug\ConsoleApp3.exe
+C:\Users\Szymon\Desktop\semestr 2\PO\lista2\Zadanie4\obj\Debug\ConsoleApp3.pdb
+C:\Users\Szymon\Desktop\semestr 2\PO\lista2\Zadanie4\bin\Debug\ConsoleApp3.exe
+C:\Users\Szymon\Desktop\semestr 2\PO\lista2\Zadanie4\bin\Debug\ConsoleApp3.pdb
+C:\Users\Szymon\Desktop\semestr 2\PO\lista2\Zadanie4\obj\Debug\Zadanie4.csprojResolveAssemblyReference.cache
