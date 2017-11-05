@@ -16,6 +16,7 @@
   <li>Kurs języka C++</li>
   <li>Wstęp do matematyki (Instytut Matematyki UWr)</li>
   <li>Systemy Rozproszone</li>
+  <li>Programowanie Obiekowe</li>
 </ul>
 <br>
 <h2>Semestr 3</h2>
