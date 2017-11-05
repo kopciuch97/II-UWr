@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Formularz z walidacją-javascript</title>
+	<script language="javascript" type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+	<form method="post" action="./index.html"  id="form">
+		<p>Nr konta Bankowego:</p>
+		<input type="text" id="nr"  size="25">
+		<b id="info_nr"> </b>
+
+		<p>Pesel</p>
+		<input type="text" id="pesel" size="25">
+		<b id="info_pesel"> </b>
+
+		<p>E-Mail:</p>
+		<input type="text" id="mail" size="25">
+		<b id="info_email"> </b>
+
+		<p>Data urodzenia:</p>
+		<input type="text" id="date"  size="25" placeholder="rrrr-mm-dd">
+		<b id="info_date"> </b>
+
+		<input type="submit" value="Wyslij"> 
+	</form>
+</body>
+</html>
