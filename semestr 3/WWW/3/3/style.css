@@ -1,0 +1,32 @@
+div.rel {
+    /* Polecenie pozycjonowania relatywnego (względnego) pozwala przesunąć wybrany element w dowolną stronę względem jego położenia spoczynkowego */
+            left: 100px;
+            top:500px;
+            position:relative;
+            padding:15px;
+            background-color:red;
+            }
+    
+    
+        div.sta {
+    /* Usuniecie pozycjonowania  */
+            position:static;	    
+            padding:15px;
+            background-color:blue;
+            }
+    
+            div.abs {
+    /* Polecenie pozycjonowania absolutnego (bezwzględnego) pozwala przesunąć wybrany element w dowolną stronę względem wybranych brzegów strony lub ewentualnie ramki na sztywno.*/
+            right: 10px;
+            position:absolute;
+            padding:15px;
+            background-color:yellow;
+            }
+            div.fix {
+    /* Działa podobnie jak pozycjonowanie absolutne, z tą różnicą, że pozycja elementu jest zawsze obliczana względem krawędzi okna przeglądark oraz jest przesuwana wraz ze stroną*/
+            right: 300px;
+            top: 300px;
+            position:fixed;
+            padding:15px;
+            background-color:green;
+            }

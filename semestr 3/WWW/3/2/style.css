@@ -1,0 +1,13 @@
+div.hor {
+    width: 50%;
+    margin-left:  auto;
+    margin-right: auto;
+    border:2px solid black;
+    text-align: center;
+}
+
+span.hor {
+    border:2px solid red;
+    text-align: center;
+    display:block;
+}

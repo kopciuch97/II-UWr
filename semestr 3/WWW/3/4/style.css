@@ -1,0 +1,28 @@
+.panel{
+    position:relative;
+    width: 900px;
+    height:	200px;
+    background-color: #F2F2F2;
+    margin-left: auto;
+    margin-right: auto;
+    border:2px solid black;
+    margin-bottom:5px;
+    margin-top:5px;
+}
+.opis{
+    position:absolute;
+    width: 680px;
+    height: 180px;
+    right: 10px;
+    top: 10px; 
+    border:2px solid black;
+}
+.podglad{
+    position:absolute;
+    width: 180px;
+    height: 180px;
+    left: 10px;
+    top: 10px;
+    background-color: #CCCCCC;
+    border:2px solid black;
+}
