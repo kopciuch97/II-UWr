@@ -1,5 +1,7 @@
 package wyrazenia;
 
+import java.util.Objects;
+
 /**
  * Klasa reprezentujaca Pare jako klucz-wartość
  * @author Szymon
@@ -15,11 +17,11 @@ public class Para {
         this.value = value;
     }
     //getter @return value
-    public double getvalue(){
+    public double getValue(){
         return this.value;
     }
     //setter 
-    public void setvalue(double value){
+    public void setValue(double value){
         this.value = value;
     }
     //toString override
@@ -40,6 +42,14 @@ public class Para {
             return false;
         }
         return this.key == ((Para)obj).key;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 47 * hash + Objects.hashCode(this.key);
+        hash = 47 * hash + (int) (Double.doubleToLongBits(this.value) ^ (Double.doubleToLongBits(this.value) >>> 32));
+        return hash;
     }
     
     
