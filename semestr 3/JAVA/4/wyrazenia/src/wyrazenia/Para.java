@@ -18,7 +18,7 @@ public class Para {
     //konstruktor:
 
     /**
-     *
+     *Konstruktor
      * @param key
      * @param value
      */
@@ -29,8 +29,8 @@ public class Para {
     //getter @return value
 
     /**
-     *
-     * @return
+     *getter
+     * @return double
      */
     public double getValue(){
         return this.value;
@@ -38,18 +38,24 @@ public class Para {
     //setter 
 
     /**
-     *
+     *setter
      * @param value
      */
     public void setValue(double value){
         this.value = value;
     }
-    //toString override
+ /**Metoda toString() nadpisana z abstrakcyjnej klasy Object
+ *@return String
+ */       
+ 
     @Override
     public String toString(){
         return "(" + this.key + ", " + this.value + ")" ;
     }
-    //equals override
+ /**Metoda equals() nadpisana z abstrakcyjnej klasy Object
+ *@return bool
+ */       
+ 
     @Override
     public boolean equals(Object obj) {
         if (obj==null){

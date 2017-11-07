@@ -1,26 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package wyrazenia;
 
-/**
+ /**
  *
- * @author Szymon
+ * 
+ * Klasa reprezentujaca operator jednoargumentowy 'odwrotnosc' 
  */
- class Odwrotnosc extends Operator1Arg{
+public class Odwrotnosc extends Operator1Arg{
         Wyrazenie exp;
         
-        public Odwrotnosc(Wyrazenie a){
+        Odwrotnosc(Wyrazenie a){
             this.exp=a;
         }
-
+/**Metoda oblicz() nadpisana z abstrakcyjnej klasy Operator1Arg obliczajaca odwrotność wyrażenia
+ *@return double
+ */
         @Override
         public double oblicz(){
             return 1/exp.oblicz();
         }
-
+ /**Metoda toString() nadpisana z abstrakcyjnej klasy Object
+ *@return String
+ */ 
         @Override
         public String toString(){
             return "(1/"+exp.oblicz()+")";

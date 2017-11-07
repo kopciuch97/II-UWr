@@ -1,25 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package wyrazenia;
 
 /**
  *
- * @author Szymon
+ * Klasa reprezentujaca operator jesnoargumentowy Cosinus
  */
-    class Cosinus extends Operator1Arg{
+    public class Cosinus extends Operator1Arg{
         Wyrazenie exp;
-        public Cosinus(Wyrazenie a){
+        Cosinus(Wyrazenie a){
             this.exp=a;
         }
-
+/**Metoda oblicz() nadpisana z abstrakcyjnej klasy Operator1Arg obliczajaca cosinus wyrazenia
+ *@return double
+ */
         @Override
         public double oblicz(){
             return Math.cos(exp.oblicz());
         }
-
+/**Metoda toString() nadpisana z klasy Object
+ *@return String
+ */
         @Override
         public String toString(){
             return "Cos(" + exp.oblicz()+")";

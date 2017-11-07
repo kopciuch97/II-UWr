@@ -1,27 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package wyrazenia;
 
-/**
+ /**
  *
- * @author Esavaner
+ * 
+ * Klasa reprezentujaca operator dwuargumentowy 'maksimum' zwracajacy wieksze z dwóch wyrażeń
  */
-   class Maksimum extends Operator2Arg{
+   public class Maksimum extends Operator2Arg{
         Wyrazenie exp1;
         Wyrazenie exp2;
-        public Maksimum(Wyrazenie a, Wyrazenie b){
+        Maksimum(Wyrazenie a, Wyrazenie b){
             this.exp1=a;
             this.exp2=b;
         }
 
+/**Metoda oblicz() nadpisana z abstrakcyjnej klasy Operator2Arg zwracająca wieksze z dwóch wyrażeń
+ *@return double
+ */   
         @Override
         public double oblicz(){
             return Math.max(exp1.oblicz(), exp2.oblicz());
         }
 
+ /**Metoda toString() nadpisana z abstrakcyjnej klasy Object
+ *@return String
+ */       
         @Override
         public String toString(){
             return "MAX("+exp1+","+exp2+")";
