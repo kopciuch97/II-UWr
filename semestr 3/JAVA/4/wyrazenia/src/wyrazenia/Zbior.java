@@ -17,6 +17,12 @@ public class Zbior {
         this.tab = new Para[len];
     }
     
+    /**
+     *
+     * @param key
+     * @return
+     * @throws IllegalArgumentException
+     */
     public Para szukaj(String key) throws IllegalArgumentException{
         for(Para p : tab){
             if (p.key == key){
@@ -35,8 +41,11 @@ public class Zbior {
         return false;
     }
     
-    
-    
+    /**
+     *
+     * @param p
+     * @throws IllegalArgumentException
+     */
     public void wstaw (Para p) throws IllegalArgumentException{ //metoda wstawiajaca Pare do zbioru, jesli para o danym kluczu juz istnieje rzucany jest wyjatek
         if (czyjest(p)){
             throw new IllegalArgumentException("Para o tym kluczu jest juz w zbiorze!");
@@ -47,6 +56,12 @@ public class Zbior {
         }
     }
     
+    /**
+     *
+     * @param key
+     * @return
+     * @throws IllegalArgumentException
+     */
     public double czytaj(String key) throws IllegalArgumentException{ //metoda zwracajaca wartosc obiektu Para o podanym kluczu ze zbioru 
         for(Para p : tab){
             if(p.key==key){
@@ -56,6 +71,11 @@ public class Zbior {
         throw new IllegalArgumentException("Pary o podanym kluczu nie ma w zbiorze!");
     }
     
+    /**
+     *
+     * @param p
+     * @throws IllegalArgumentException
+     */
     public void ustal(Para p) throws IllegalArgumentException{ //metoda wstawiajaca obiekt Para do zbioru lub jesli w zbiorze jest Para o tym samym kluczu aktualizuje jego wartosc
         if(czyjest(p)){
             for (Para szukana : tab){
@@ -80,6 +100,9 @@ public class Zbior {
         return iloscpar;
     }
     
+    /**
+     *
+     */
     public void czysc(){ //metocza czyszczaca zbior
         for(Para p : tab){
             p = null;

@@ -8,19 +8,39 @@ import java.util.Objects;
  */
 public class Para {
     //pola:
+
+    /**
+     *
+     */
     public final String key;
     private double value;
 
     //konstruktor:
+
+    /**
+     *
+     * @param key
+     * @param value
+     */
     public Para(String key, double value) {
         this.key = key;
         this.value = value;
     }
     //getter @return value
+
+    /**
+     *
+     * @return
+     */
     public double getValue(){
         return this.value;
     }
     //setter 
+
+    /**
+     *
+     * @param value
+     */
     public void setValue(double value){
         this.value = value;
     }
