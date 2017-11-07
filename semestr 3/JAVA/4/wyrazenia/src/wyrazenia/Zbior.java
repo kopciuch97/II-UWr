@@ -1,8 +1,9 @@
 package wyrazenia;
 
 /**
- *
+ *  Klasa reprezentujaca zbior par o unikalnym kluczu
  * @author Szymon
+ * 
  */
 public class Zbior {
     Para[] tab; //Definicja tablicy par
@@ -71,7 +72,10 @@ public class Zbior {
             wstaw(p);
         }  
     }
-    
+    /**
+    *metoda zwracajaca ilosc obiektow Para w zbiorze
+    * @return iloscpar
+    **/
     public int ile(){ //metoda zwracajaca ilosc obiektow Para w zbiorze
         return iloscpar;
     }
