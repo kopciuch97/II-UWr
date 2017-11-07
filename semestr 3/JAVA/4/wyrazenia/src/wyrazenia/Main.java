@@ -1,6 +1,6 @@
 package wyrazenia;
 class Main{
-public static void main(){
+public static void main(String[] args){
     Wyrazenie w = new Dodawanie(
         new Stala(7),
         new Mnozenie(
@@ -8,7 +8,7 @@ public static void main(){
                 new Stala(5)
                 )
         );
-    System.out.println(w);   
+    System.out.println(w.oblicz());   
 
     
     }
