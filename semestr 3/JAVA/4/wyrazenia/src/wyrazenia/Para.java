@@ -7,6 +7,10 @@ import java.util.Objects;
  * @author Szymon
  */
 public class Para {
+
+    static void wstaw(Para p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     //pola:
 
     /**
