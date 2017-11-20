@@ -89,7 +89,6 @@ function pickColor(){
 }
 
 function generateRandomColors(num){
-	//make an array
 	var arr = []
 	//repeat num times
 	for(var i = 0; i < num; i++){

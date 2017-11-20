@@ -54,7 +54,7 @@ $(function () {
                     "<td>" + birth.val() + "</td>" +
                     "<td>" + "<button type='button'  class='removebutton' title='Usuń'>X</button>" + "</td>" +
                     "</tr>");
-            dialog_form.dialog("close");
+                $(this).dialog("close");
         }
         return valid;
     }
@@ -85,8 +85,8 @@ $(function () {
         dateFormat: 'dd-mm-yy'
     });
     $(document).on('click', 'button.removebutton', function () {
-        table_row = this;
         $("#dialog-remove").dialog('open');
+        $(this).closest('tr').addClass('toRemove');
         return false;
     });
     $("#dialog-remove").dialog({
@@ -97,12 +97,16 @@ $(function () {
         autoOpen: false,
         buttons: {
             "Tak": function () {
-                $(table_row).closest('tr').remove();
+                $(".toRemove").remove();
                 $(this).dialog("close");
             },
             "Nie": function () {
+                $(".toRemove").removeClass("toRemove");
                 $(this).dialog("close");
+                
+                
             }
         }
     });
 });
+

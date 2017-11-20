@@ -39,6 +39,8 @@ h1 {
 #message {
 	display: inline-block;
 	width: 20%;
+	font-family: "Montserrat", "Avenir";
+	color: black;
 }
 
 #stripe {
