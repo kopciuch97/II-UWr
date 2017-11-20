@@ -1,0 +1,31 @@
+zad 1
+"HTTP to skrót od Hypertext Transfer Protocol i jest to główny protokół używany współcześnie w przegladarkach. Jest to protokół bezstanowy, tzn. ani serwer (ani klient) nie przechowuje informacji o tym,
+jakie były wcześniej zapytania pomiędzy określonym serwerem i klientem oraz nie posiada stanu wewnętrznego. Powoduje to, że każde zapytanie do serwera traktowane jest jako ‚nowe’,
+z punktu widzenia serwera aplikacji niemożliwe do powiązania z informacjami np. o zalogowanym użytkowniku. Tą bezstanowość można obejść, obecnie głównie za pomocą tzw. ciasteczek, należy jednak pamiętać,
+że HTTP sam w sobie jest bezstanowy"
+
+zad 2
+Content-Length- Długość w bajtach przesyłanej zawartości (wyłączając część nagłówkową). Nagłówek obowiązkowy dla danych wysyłanych z serwera, oraz przy korzystaniu z metody POST.
+
+$_SERVER jest tablicą zawierającą informacje takie jak nagłówki, ścieżki i lokalizacje skryptów. Wpisy w tej tablicy są tworzone przez serwer WWWW. 
+
+
+zad8.
+Ciasteczko HTTP only - ciastko, które mozna odczytac tylko po stronie serwera. Nie jest widoczne po stronie
+klienta. Pozwala ona częściowo zapobiegać, a raczej utrudniać stosowanie rodzaju ataków XSS.
+
+zad.9 
+Persistent cookie (trwałe) - jest przechowywane na komputerze przez dłuzszy okres czasu. Dzieki
+temu mozemy byc nie wylogowywani z portalów społecznościowych (Facebook, nk...) po zamknieciu przegladarki.
+
+Session cookie (sesyjne) - Podczas przegladania stron jest przechowywana w pamieci podrecznej
+(cache).  Ciasteczka sesyjne sa usuwane po zamknieciu przegladarki.
+
+zad10.
+domain (domena) - pozwala na odczyt ciasteczka dla strony o podanej domenie oraz jej subdomenach,
+path (sciezka) - pozwala na odczyt w tylko w danej sciezce, 
+
+------------------------------------WIDNOWS-----------------------------
+Chrome:
+Sesyjne: C:\Users\[name_user]\AppData\Local\Google\Chrome\User Data\Default\Cookies
+Trwałe: C:\Users\[name_user]\AppData\Local\Google\Chrome\User Data\Default\Cache\
