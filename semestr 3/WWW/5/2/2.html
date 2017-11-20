@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI Dialog - Modal form</title>
+    <link rel="stylesheet" href="http://	code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script> 
+</head>
+<body>
+
+<div id="dialog-form" title="Utwórz">
+    <p class="validateTips">Wszystkie pola są wymagane.</p>
+
+    <form>
+        <fieldset>
+            <label for="name">Imie</label>
+            <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all">
+            <label for="surname">Nazwisko</label>
+            <input type="text" name="surname" id="surname" class="text ui-widget-content ui-corner-all">
+            <label for="city">Miasto</label>
+            <input type="text" name="city" id="city" class="text ui-widget-content ui-corner-all">
+            <label for="zipcode">Kod pocztowy</label>
+            <input type="text" name="zipcode" id="zipcode" class="text ui-widget-content ui-corner-all">
+            <label for="birth">Data urodzenia</label>
+            <input type="text" name="birth" id="birth" class="text ui-widget-content ui-corner-all">
+
+
+            <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+        </fieldset>
+    </form>
+</div>
+
+
+<div id="users-contain" class="ui-widget">
+    <h1>jQuery UI exercise :></h1>
+    <table id="users" class="ui-widget ui-widget-content">
+        <thead>
+        <tr class="ui-widget-header ">
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Miasto</th>
+            <th>Kod pocztowy</th>
+            <th>Data urodzenia</th>
+            <th>Usuń</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+<div id="dialog-remove" title="Usunąć?">
+    <p>Czy chcesz usunąć ten wpis? Nie będzie można go przywrócić.</p>
+</div>
+<button id="create-user">Utwórz</button>
+
+
+</body>
+</html>
