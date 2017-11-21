@@ -1,7 +1,4 @@
-<style>
-  h1{
-  color: blue;}
- </style>
+
 
 <h1>Projekty i zadania realizowane podczas studiów inżynierskich na kierunku Informatyka na Uniwersytecie Wrocławskim</h1>
 <br>
