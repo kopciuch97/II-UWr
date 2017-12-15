@@ -7,6 +7,7 @@
     </head>
     <body>
         <!--Zadanie 2-->
+        <h1>Zadanie2</h1>
         <ul>
         <?php
         //POST
@@ -22,7 +23,7 @@
         
         <ul>
         <?php
-        //POST
+        //GET
         if(!empty($_GET)){
             foreach ($_GET as $key => $value) {
                 echo "<li>$key : $value</li>";
@@ -40,23 +41,21 @@
         <br><br>
         <hr>
         <!-- ZADANIE 3 -->
-        <?php
-        echo "<pre>";
-        echo var_dump($_FILES['file']);
-        echo '</pre>'
-        ?>
-        <hr>
-        <br><br>
-        
-        <?php 
-        if(!empty($_SERVER)){
-            foreach ($_SERVER as $key => $value) {
-                echo "<li>$key : $value</li>";
-            }     
-        }
-        ?>
+        <h1>Zadanie 3</h1>        
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload Image" name="submit">
+        </form>
         <hr style="height: 3px;">
-        <!--Zadanie 2-->
+        <h1> Zadanie 4 </h1>
+        <form action="form.php" method="POST">
+            <label for="name">Imie:</label>
+            <input type="text" name="name" id="name">
+            <label for="surname">Nazwisko:</label>
+            <input type="text" name ="surname" id="surname">
+            <input type="submit">
+        </form>
 
         
     </body>
