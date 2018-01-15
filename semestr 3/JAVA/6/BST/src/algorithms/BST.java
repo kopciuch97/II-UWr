@@ -4,6 +4,7 @@ package algorithms;
 /**
  *
  * @author SzymonKopa
+ * @param <T>
  * 
  */
 public class BST<T extends Comparable<T>> implements Dict<T> {
@@ -19,10 +20,10 @@ public class BST<T extends Comparable<T>> implements Dict<T> {
         T data;
         
         public Node(){
-           right = null;
-           left = null;
-           parent = null;
-           data = null;
+//           right = null;
+//           left = null;
+//           parent = null;
+//           data = null;
                    
         }
         /**
@@ -51,7 +52,7 @@ public class BST<T extends Comparable<T>> implements Dict<T> {
 
     int size;
     public BST(){
-        root = new Node<T>();
+        root = new Node<>();
         size = 0;
         root.parent = root;
     }
@@ -146,12 +147,19 @@ public class BST<T extends Comparable<T>> implements Dict<T> {
                 remove((T) repl.data);
                 x.data = repl.data;
             }
-
-            
-            
-            
-            
         }
+    }
+    
+    @Override
+    public String toString(){
+        return showAll(root);
+    }
+    
+    public String showAll(Node node){
+        if(node!=null){
+            return showAll(node.left)+ " " + node.data +" " +showAll(node.right);
+        }
+        return "";
     }
 
     @Override
