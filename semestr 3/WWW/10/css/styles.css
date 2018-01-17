@@ -1,6 +1,6 @@
 
 .carousel-item > img {
-    height:925px;
+    height:610px;
 }
 .container-fluid{
     padding:0px 0px;
@@ -25,7 +25,7 @@ footer{
 }
 
 .navtransform{
-    background-color: #00695c;
+    background-color: rgba(43,187,173,0.5);
     font-size: 0.8em;
 }
 .card-img-top {
@@ -36,4 +36,10 @@ footer{
 
 footer{
     background-color: #00695c !important;
+}
+
+.card-title{
+    text-align: center;
+    line-height: 150%;
+    
 }
