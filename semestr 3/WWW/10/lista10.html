@@ -19,7 +19,7 @@
 		
     </head>
 
-    <body>
+    <body data-spy="scroll" data-target=".navbar" data-offset="50">
         <nav class="navbar fixed-top sticky-top navbar-expand-lg navbar-light bg-default z-depth-4">
             <div class="container-fluid">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" width="30px" height="30px">
@@ -30,13 +30,16 @@
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="#">Strona główna<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Order</a>
+                                <a class="nav-link" href="#aktualnosci">Aktualności</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
+                                <a class="nav-link" href="#polecane">Polecane</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#top">Ostatnio przeglądane</a>
                             </li>
                         </ul>
 
@@ -92,7 +95,7 @@
                 </div>
             </div>
 
-            <div class="container-fluid z-depth-4">
+            <div class="container-fluid z-depth-4"  id="aktualnosci">
                 <div class="jumbotron bg-default text-justify wow animated slideInLeft">
                     <h1 class="text-center font-weight-bold text-uppercase">Aktualności</h1>
                     
@@ -105,14 +108,14 @@
                 </p>
             </div>
 
-            <div class="container-fluid z-depth-4">
+            <div class="container-fluid z-depth-4"  id="polecane">
                     <div class="jumbotron bg-default text-justify wow animated slideInRight">
                         <h2 class="text-center font-weight-bold text-uppercase">Polecane</h1> 
                     </div>
             </div>
 
             <div class="container">
-                    <div class="row">
+                    <div class="row" >
                             
                             <div class="col-md">
                                 <div class="card d-flex align-items-stretch">

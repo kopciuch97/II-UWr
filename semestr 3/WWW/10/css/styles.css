@@ -1,6 +1,6 @@
 
 .carousel-item > img {
-    height:610px;
+    height:900px;
 }
 .container-fluid{
     padding:0px 0px;
@@ -45,3 +45,6 @@ footer{
     
 }
 
+body{
+    position: relative;
+}
