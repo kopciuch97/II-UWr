@@ -19,7 +19,7 @@
 		
     </head>
 
-    <body>
+    <body data-spy="scroll" data-target=".navbar" data-offset="50">
         <nav class="navbar fixed-top sticky-top navbar-expand-lg navbar-light bg-default z-depth-4">
             <div class="container-fluid">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png" width="30px" height="30px">
@@ -28,24 +28,27 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
+                        <ul class="navbar-nav nav mr-auto">
+                            <li class="nav-item">
                                 <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Order</a>
+                            <li class="nav-item" >
+                                <a class="nav-link" href="#aktualnosci">Aktualności</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
+                                <a class="nav-link" href="#polecane">Polecane</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#top">Ostatnio oglądane</a>
                             </li>
                         </ul>
 
                         <ul class="navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Login</a>
+                                    <a class="nav-link" href="#">Zaloguj się!</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Register</a>
+                                    <a class="nav-link" href="#">Zarejestruj się!</a>
                                 </li>
                             </ul>
                     </div>
@@ -92,7 +95,7 @@
                 </div>
             </div>
 
-            <div class="container-fluid z-depth-4">
+            <div class="container-fluid z-depth-4" id="aktualnosci">
                 <div class="jumbotron bg-default text-justify wow animated slideInLeft">
                     <h1 class="text-center font-weight-bold text-uppercase">Aktualności</h1>
                     
@@ -105,7 +108,7 @@
                 </p>
             </div>
 
-            <div class="container-fluid z-depth-4">
+            <div class="container-fluid z-depth-4" id="polecane">
                     <div class="jumbotron bg-default text-justify wow animated slideInRight">
                         <h2 class="text-center font-weight-bold text-uppercase">Polecane</h1> 
                     </div>
