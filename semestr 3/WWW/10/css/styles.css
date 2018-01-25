@@ -45,15 +45,9 @@ footer{
     
 }
 
-<<<<<<< HEAD
 .active{
     background-color: rgba(54, 240, 221, 0.5) !important;
     font-size: 1.4em !important;
     text-decoration: underline;
 
 }
-=======
-body{
-    position: relative;
-}
->>>>>>> master
