@@ -30,4 +30,5 @@
   <li>Systemy Operacyjne(podstawy)</li>
   <li>Komunikacja człowiek-komputer</li>
   <li><a href="https://github.com/ProjektSOFA">Projekt S.O.F.A. projekt zespołowy w ramach działania w Kole Studentów Informatyki</a></li>
+  <li><a href="https://github.com/kamarkiewicz/Strona_KSI">Projekt strony Koła Studentów Informatyki UWr</a></li>
 </ul>
