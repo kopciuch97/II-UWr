@@ -18,7 +18,7 @@
   <li>Kurs języka C++ (wyk. Paweł Rzechonek prac: Marek Materzok)</li>
   <li>Wstęp do matematyki (Instytut Matematyki UWr) (wyk: Piotr Borodulin-Nadzieja ćw: Piotr Borodulin-Nadzieja)</li>
   <li>Systemy Rozproszone (wyk: Zdzisław Płoski ćw: Zdzisław Płoski)</li>
-  <li>Programowanie Obiekowe (wyk: Marcin Młotkowski prac: Marcin Młotkowski</li>
+  <li>Programowanie Obiekowe (wyk: Marcin Młotkowski prac: Marcin Młotkowski)</li>
 </ul>
 <br>
 <h2>Semestr 3</h2>
@@ -34,7 +34,7 @@
 </ul>
 <h2>Semestr 4</h2>
 <ul>
-  <li>Metody Programowania 2018 (wyk: Filip Sieczkowski+Marek Materzok+Maciej Piróg ćw+prac: Maciej Piróg</li>
+  <li>Metody Programowania 2018 (wyk: Filip Sieczkowski+Marek Materzok+Maciej Piróg ćw+prac: Maciej Piróg)</li>
   <li>Bazy Danych (wyk: Piotr Wieczorek ćw+prac: Małgorzata Biernacka)</li>
   <li>Algorytmy i struktury danych (wyk: Krzysztof Loryś ćw: Paweł Rzechonek) </li>
   <li>Projektowanie i implementacja zaawansowanych aplikacji w PHP (wyk: Mariusz Gil prac: Mariusz Gil)</li>
