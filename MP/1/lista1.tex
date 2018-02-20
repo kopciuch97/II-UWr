@@ -1,0 +1,133 @@
+\documentclass[a4paper]{article}
+\usepackage[T1]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{inputenc}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Lisp,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+\title{Metody Programowania lista 1}
+\author{Szymon Kopa}
+\date{20 lutego 2018}
+
+\begin{document}
+\maketitle
+\clearpage
+
+\section{Ćwiczenie 1}
+\subsection{}
+\begin{lstlisting}
+>10
+10
+\end{lstlisting}
+\subsection{}
+\begin{lstlisting}
+>(+ 5 3 4)
+12
+\end{lstlisting}
+\subsection{}
+\begin{lstlisting}
+>(- 9 1)
+8
+\end{lstlisting}
+\subsection{}
+\begin{lstlisting}
+>(/ 6 2)
+3
+\end{lstlisting}
+\subsection{}
+\begin{lstlisting}
+>(+ (* 2 4) (- 4 6) )
+
+6
+\end{lstlisting}
+\subsection{}
+\begin{lstlisting}
+>(define a 3)
+>( define b (+ a 1) )
+>(+ a b (* a b ) )
+
+19
+\end{lstlisting}
+\subsection{}
+\begin{lstlisting}
+>(= a b )
+
+#f
+\end{lstlisting}
+\subsection{}
+\begin{lstlisting}
+>( if ( and (> b a ) (< b (* a b ) ) ) b a)
+
+4
+\end{lstlisting}
+\subsection{}
+\begin{lstlisting}
+>( cond [(= a 4) 6]
+[(= b 4) (+ 6 7 a ) ]
+[ else 25])
+
+16
+\end{lstlisting}
+\subsection{}
+\begin{lstlisting}
+>(+ 2 ( if (> b a ) b a ) )
+
+6
+\end{lstlisting}
+\subsection{}
+\begin{lstlisting}
+>(* ( cond [( > a b ) a ]
+[(< a b ) b ]
+[ else
+-1])
+(+ a 1) )
+
+16
+\end{lstlisting}
+
+\section{Ćwiczenie 2}
+\begin{center}
+    $$ \frac{5+4+(2-(3-(6+\frac{4}{5})))}{3(6-2)(2-7)} $$
+\begin{lstlisting}
+    (/ ({+ 5 4 (- 2 {- 3 (+ 6 {/ 4 5})})}) {* 3 (- 6 2 ) (- 2 7 )})
+\end{lstlisting}
+\end{center}
+\section{Ćwiczenie 3}
+\clearpage
+\section{Ćwiczenie 4}
+\begin{lstlisting}
+    #lang racket
+    (define (sum-of-squares a b)
+      (+ (* a a) (* b b)))
+    (define (max a b)
+      (cond [(> a b) a]
+            [else b]))
+    (define (sum-of-squares-of-2-largest a b c)
+      (cond [(> a b) (sum-of-squares a (max b c))]
+            [else (sum-of-squares b (max a c))]))
+\end{lstlisting}
+\section{Ćwiczenie 5}
+
+\end{document}
