@@ -134,18 +134,20 @@ Mamy wyjaśnić:
   ( define ( a-plus-abs-b a b )
     (( if (> b 0) + -) a b ) )
 \end{lstlisting}
-Skoro wiemy, że naszymi operatorami mogą być wyrażenia złożone. Jeśli $$b$$ będzie ujemne to od $$a$$ będziemy odejmować $$b$$. Wyjdzie nam z tego wartość bezwzględna. Operatorem złożonym jest całe wyrażenie z "if". Z argumentami przykładowymi 2 i -2 mamy:
-\begin {lstlisting}
+Skoro wiemy, że naszymi operatorami mogą być wyrażenia złożone. Jeśli $b$ będzie ujemne to od $a$ będziemy odejmować $b$. Wyjdzie nam z tego wartość bezwzględna. Operatorem złożonym jest całe wyrażenie z "if". Z argumentami przykładowymi 2 i -2 mamy:
+\begin{lstlisting}
 ( a-plus-abs-b 2 -2 )
 (( if (> -2 0) + -) 2 -2 )
 
 
 ((if #f + -)2 -2)
 (2 -2)
-\vdots
+
+
 4
-\end {lstlisting} 
+\end{lstlisting} 
 \section{Ćwiczenie 6}
+
 \begin{lstlisting}
 (and  #f (< 0 1))
 
@@ -166,5 +168,29 @@ Chcemy znaleźć sufit z logarytmu.
     (pct (+ e 1) )
   ))
   (pct 0))
-\end{lstisting}
+\end{lstlisting}
+
+\section{Zadanie domowe}
+Praktycznie kopiujemy z wykładu, sami możemy przyjąć jakąś dokładność. Zmieniamy tylko approxa na podanego w zadaniu oraz obliczanie kwadratu na obliczanie sześcianu. Tyle, darmowa pracownia. Dla bignumów się krzaczy ze względu na \textit{utratę cyfr znaczących}.
+\begin{lstlisting}
+  (define (cube-root x)
+  (define (dist x y)
+    (abs (- x y)))
+
+  (define (cube x)
+    (* x x x))
+
+  (define (improve approx)
+    (/ (+ (/ x (* approx approx)) (* 2 approx)) 3))
+
+  (define (good-enough? approx)
+    (< (dist x (cube approx)) 0.00000000001))
+
+  (define (iter approx)
+    (cond
+      [(good-enough? approx) approx]
+      [else                  (iter (improve approx))]))
+  
+  (iter 1.0))
+\end{lstlisting}  
 \end{document}

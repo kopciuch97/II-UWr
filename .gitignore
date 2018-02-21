@@ -1,13 +1,24 @@
-/semestr 3/JAVA/4/wyrazenia/nbproject/private/
-/semestr 3/JAVA/4/wyrazenia/build/
-/semestr 3/JAVA/4/wyrazenia/dist/
-/semestr 3/JAVA/5/ONP/nbproject/private/
-<<<<<<< HEAD
-/semestr 3/JAVA/5/ONP/build/
-/semestr 3/JAVA/5/ONP/dist/
-=======
-/semestr 3/JAVA/5/ONP/build/
->>>>>>> master
-/semestr 3/JAVA/6/BST/nbproject/private/
-/semestr 3/JAVA/6/BST/dist/
-/semestr 3/JAVA/6/BST/build/
+*.aux
+*.glo
+*.idx
+*.log
+*.toc
+*.ist
+*.acn
+*.acr
+*.alg
+*.bbl
+*.blg
+*.dvi
+*.glg
+*.gls
+*.ilg
+*.ind
+*.lof
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.out
+*.synctex.gz
+*.tex
