@@ -129,5 +129,42 @@
             [else (sum-of-squares b (max a c))]))
 \end{lstlisting}
 \section{Ćwiczenie 5}
+Mamy wyjaśnić:
+\begin{lstlisting}
+  ( define ( a-plus-abs-b a b )
+    (( if (> b 0) + -) a b ) )
+\end{lstlisting}
+Skoro wiemy, że naszymi operatorami mogą być wyrażenia złożone. Jeśli $$b$$ będzie ujemne to od $$a$$ będziemy odejmować $$b$$. Wyjdzie nam z tego wartość bezwzględna. Operatorem złożonym jest całe wyrażenie z "if". Z argumentami przykładowymi 2 i -2 mamy:
+\begin {lstlisting}
+( a-plus-abs-b 2 -2 )
+(( if (> -2 0) + -) 2 -2 )
 
+
+((if #f + -)2 -2)
+(2 -2)
+\vdots
+4
+\end {lstlisting} 
+\section{Ćwiczenie 6}
+\begin{lstlisting}
+(and  #f (< 0 1))
+
+(or #t (< 0 1))
+\end{lstlisting}
+\section{Ćwiczenie 7}
+\begin{lstlisting}
+(test 0 (p))
+\end{lstlisting}
+Jest to język gorliwy, ponieważ program się zapętla przy wywołaniu powyższej procedury. Chcemy cały czas obliczyć p, które wywołuje w pętli samą siebie.
+\section{Ćwiczenie 8}
+Chcemy znaleźć sufit z logarytmu.
+\begin{lstlisting}
+(define (power-close-to b n)
+  (define (pct e)
+    (if (> (exp b e)n)
+    e
+    (pct (+ e 1) )
+  ))
+  (pct 0))
+\end{lstisting}
 \end{document}
