@@ -1,0 +1,21 @@
+{
+  "name": "vendor/autoload",
+  "type": "project",
+  "require-dev": {
+    "moneyphp/money": "^3.1"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Szymon Kopa",
+      "email": "kopaszymon97@gmail.com"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "src\\": "src/"
+    }
+  }
+}
