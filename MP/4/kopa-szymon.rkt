@@ -27,11 +27,9 @@
        (natural? (caddr h))))
 
 (define (make-node elem heap-a heap-b)
-  (cond
-    [(> (rank heap-a) (rank heap-b))
-     (list 'hnode elem (inc (rank heap-a)) heap-a heap-b)]
-    [else
-     (list 'hnode elem (inc (rank heap-b)) heap-b heap-a)]))
+  (if (> (rank heap-a) (rank heap-b))
+     (list 'hnode elem (inc (rank heap-a)) heap-a heap-b)
+     (list 'hnode elem (inc (rank heap-b)) heap-b heap-a)))
 
 (define (node-elem h)
   (second h))
