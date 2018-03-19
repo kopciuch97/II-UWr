@@ -27,8 +27,11 @@
        (natural? (caddr h))))
 
 (define (make-node elem heap-a heap-b)
-  ;;; XXX: fill in the implementation
-  ...)
+  (cond
+    [(> (rank heap-a) (rank heap-b))
+     (list 'hnode elem (inc (rank heap-a)) heap-a heap-b)]
+    [else
+     (list 'hnode elem (inc (rank heap-b)) heap-b heap-a)]))
 
 (define (node-elem h)
   (second h))
@@ -78,12 +81,22 @@
   (heap-merge (node-left heap) (node-right heap)))
 
 (define (heap-merge h1 h2)
+  (define (helpList h1 h2)
+    (cond
+      [(< (elem-priority (heap-min h1)) (elem-priority (heap-min h2)))
+         (list (heap-min h1) (node-left h1) (node-right h1) h2)]
+         [else (list (heap-min h2) (node-left h2) (node-right h2) h1)]))
   (cond
    [(leaf? h1) h2]
    [(leaf? h2) h1]
    ;; XXX: fill in the implementation
-   [else ...]))
-
+   [else
+    (let* ([e (car (helpList h1 h2))]
+           [hl (cadr (helpList h1 h2))]
+           [hr (caddr (helpList h1 h2))]
+           [h (cadddr (helpList h1 h2))]
+           [merged (heap-merge hr h)])
+      (make-node e hl merged))]))
 
 ;;; heapsort. sorts a list of numbers.
 (define (heapsort xs)
@@ -110,3 +123,23 @@
         lst
         (aux (- len 1) (cons (random max) lst))))
   (aux len null))
+
+(define a (randlist 10 10))
+(heapsort a)
+(sorted? (heapsort a))
+
+(define b (randlist 10 50))
+(heapsort b)
+(sorted? (heapsort b))
+
+(define c (randlist 20 60))
+(heapsort c)
+(sorted? (heapsort c))
+
+(define e (randlist 30 100))
+(heapsort e)
+(sorted? (heapsort e))
+
+(define d (randlist 40 100))
+(heapsort d)
+(sorted? (heapsort d))
