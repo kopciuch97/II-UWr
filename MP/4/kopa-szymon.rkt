@@ -83,7 +83,8 @@
     (cond
       [(< (elem-priority (heap-min h1)) (elem-priority (heap-min h2)))
          (list (heap-min h1) (node-left h1) (node-right h1) h2)]
-         [else (list (heap-min h2) (node-left h2) (node-right h2) h1)]))
+         [else 
+         (list (heap-min h2) (node-left h2) (node-right h2) h1)]))
   (cond
    [(leaf? h1) h2]
    [(leaf? h2) h1]
