@@ -1,4 +1,4 @@
-```
+```scheme
 (define (flatten t)
   (define (flat t acc)
     (if (leaf? t)
