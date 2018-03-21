@@ -72,3 +72,15 @@
 ```
 
 *** 
+### Zadanie 4 ###
+```scheme
+(define (literal? f)
+  (or
+   (var? f)
+   (and (neg? f) (var? (cadr f)))))
+
+(define (nnf? f)
+  (cond [(conj? f) (and (nnf? (conj-rght f)) (nnf? (conj-left f)))]
+        [(disj? f) (and (nnf? (disj-rght f)) (nnf? (disj-left f)))]
+        [else #f]))
+```
