@@ -1,15 +1,15 @@
-<h3>Ważne procedury/informacje, które warto znać przed egzaminem</h3>
-<ol>
-<li><b>Append</b> <br>
+### Ważne procedury/informacje, które warto znać przed egzaminem ###
+
+**Append**
 ```scheme
 (define (append xs ys)
   (if (null? xs)
       ys
       (cons (car xs) (append (cdr xs) ys))))
 ```
-</li>
+<hr>
 
-<li><b>Flatten</b> <br>
+**Flatten**
 ```scheme
 (define (flatten t)
   (define (flat t acc)
