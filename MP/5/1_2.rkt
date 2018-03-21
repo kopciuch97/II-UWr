@@ -1,20 +1,21 @@
 #lang racket
+;;PREDYKATY
 (define (var? t)
   (symbol? t))
  
 (define (neg? t)
   (and (list? t)
-       (= (length t) 2)
+       (= 2 (length t))
        (eq? 'neg (car t))))
  
-(define (conj? t)       ;;koniunkcja
+(define (conj? t)
   (and (list? t)
-       (= (length t) 3)
+       (= 3 (length t))
        (eq? 'conj (car t))))
  
-(define (disj? t)       ;;alternatywa
+(define (disj? t)
   (and (list? t)
-       (= (length t) 3)
+       (= 3 (length t))
        (eq? 'disj (car t))))
  
 (define (prop? f)
@@ -23,41 +24,45 @@
            (prop? (neg-subf f)))
       (and (disj? f)
            (prop? (disj-left f))
-           (prop? (disj-rght f)))
+           (prop? (disj-right f)))
       (and (conj? f)
            (prop? (conj-left f))
-           (prop? (conj-rght f)))))
+           (prop? (conj-right f)))))
  
+;;KONSTRUKTORY
 (define (neg t)
   (list 'neg t))
  
-(define (conj x y)
-  (list 'conj x y))
+(define (conj t1 t2)
+  (list 'conj t1 t2))
  
-(define (disj x y)
-  (list 'disj x y))
+(define (disj t1 t2)
+  (list 'disj t1 t2))
  
-(define (neg-subf f)
-  (cadr f))
+;;SELEKTORY
+(define (neg-subf t)
+  (second t))
  
-(define (disj-left f)
-  (cadr f))
+(define (disj-left t)
+  (second t))
  
-(define (disj-rght f)
-  (caddr f))
+(define (disj-right t)
+  (third t))
  
-(define (conj-left f)
-  (cadr f))
+(define (conj-left t)
+  (second t))
  
-(define (conj-rght f)
-  (caddr f))
+(define (conj-right t)
+  (third t))
  
+;;free-vars
 (define (free-vars f)
-  (define (fv f xs)
-    (cond [(neg? f) (fv (neg-subf f) xs)]
-          [(disj? f) (fv (disj-rght f) (fv (disj-left f) xs))]
-          [(conj? f) (fv (conj-rght f) (fv (conj-left f) xs))]
-          [else (append xs (list f))]))
-  (fv f null))
+  (define (iter f xs)
+    (cond [(neg? f) (iter (neg-subf f) xs)]
+          [(disj? f) (iter (disj-right f) (iter (disj-left f) xs))]
+          [(conj? f) (iter (conj-right f) (iter (conj-left f) xs))]
+          [else (remove-duplicates (append xs (list f)))]))
+   (if (prop? f)
+      (iter f null)
+      (error "coś poszło nie tak")))
  
-;; (free-vars (neg (disj 2 (conj 10 (disj 9 11)))))        - tescik
