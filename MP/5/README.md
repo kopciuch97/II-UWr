@@ -72,6 +72,37 @@
 ```
 ***
 ### Zadanie 3 ###
+>W zadaniu 1-2 znajdują się procedury potrzebne do poprawnego działania programu.
+```scheme
+(define (gen-vals xs)
+   (if (null? xs)
+       (list null)
+       (let*
+           ((vss (gen-vals (cdr xs)))
+            (x (car xs))
+            (vst (map (lambda (vs) (cons (list x true) vs)) vss))
+            (vsf (map (lambda (vs) (cons (list x false) vs)) vss)))
+         ( append vst vsf))))
+
+(define (eval-formula t vals)
+  (cond [(var? t) (find-var t vals)]
+        [(neg?  t) (not (eval-formula (neg-subf t) vals))]
+        [(conj? t) (and (eval-formula (conj-left t) vals) (eval-formula (conj-right t) vals))]
+        [(disj? t) (or  (eval-formula (disj-left t) vals) (eval-formula (disj-right t) vals))]))
+
+(define (find-var var values)
+  (cond [(null? values) (error (string-append "Zmienna nie jest zdefiniowana: " (symbol->string var)))]
+        [(eq? (caar values) var) (car (cdar values))]
+        [else (find-var var (cdr values))]))
+
+(define (falsifable-eval? t)
+  (define (iter vals)
+    (if (null? vals)
+        false
+        (if (eval-formula t (car vals))
+            (iter (cdr vals))
+            (car vals))))
+    (iter (gen-vals (free-vars t))))
 
 
 
