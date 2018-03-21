@@ -73,7 +73,7 @@
 
 *** 
 ### Zadanie 4 ###
-```scheme
+```racket
 (define (literal? f)
   (or
    (var? f)
