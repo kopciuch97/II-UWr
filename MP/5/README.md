@@ -72,7 +72,7 @@
 ```
 ***
 ### Zadanie 3 ###
-```racket
+
 
 
 ```
@@ -97,7 +97,7 @@
 ```
 
 ### Zadanie 5 ###
->W zadaniu 1-2 znajdują się potrzebne procedury
+>W zadaniu 1-2 znajdują się procedury potrzebne do poprawnego działania programu.
 ```racket
 (define (convert-to-nnf t)
   (define (neg-ct-nnf t)

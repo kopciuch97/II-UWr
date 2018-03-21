@@ -9,6 +9,33 @@
 ```
 ***
 
+**Predykat list?**
+```scheme
+(define (list? x)
+  (or (null? x)
+      (and (pair? x)
+           (list? (cdr x)))))
+```
+
+**Map**
+```scheme
+(define (map f xs)
+  (if (null? xs)
+      null
+      (cons (f (car xs))
+            (map f (cdr xs)))))
+```
+***
+
+**Foldr**
+```scheme
+(define (fold-right op nval xs)
+  (if (null? xs)
+      nval
+      (op (car xs)
+          (fold-right op nval (cdr xs)))))
+```
+
 **Flatten**
 ```scheme
 (define (flatten t)
