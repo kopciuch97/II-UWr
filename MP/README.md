@@ -23,6 +23,3 @@
   (if (leaf? t) null
       (append (flatten (node-left t)) (cons (node-value t) (flatten (node-right t))))))
 ```
-</li>
-
-</ol>
