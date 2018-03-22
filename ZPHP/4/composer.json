@@ -1,0 +1,21 @@
+{
+    "name": "szyko/4",
+    "description": "Silex REST API",
+    "require": {
+        "silex/silex": "^2.2",
+        "moneyphp/money": "^3.1"
+    },
+    "authors": [
+        {
+            "name": "Szymon Kopa",
+            "email": "kopaszymon97@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "src\\": "src/"
+        }
+      }
+}
+
+
