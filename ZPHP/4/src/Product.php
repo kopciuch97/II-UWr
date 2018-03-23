@@ -4,6 +4,7 @@ namespace src;
 
 use Money\Money;
 use Money\Currency;
+
 class Product
 {
     private $id;
@@ -12,13 +13,13 @@ class Product
 
     /**
      * Product constructor.
-     * @param $id
-     * @param $name
-     * @param $value
-     * @param $currency
+     * @param int $id
+     * @param string $name
+     * @param float $value
+     * @param string $currency
      */
-    public function __construct(
-        $id, $name, $value, $currency){
+    public function __construct(int $id, string $name, float $value, string $currency)
+    {
         $this->id = $id;
         $this->name = $name;
         $this->money = new Money($value,
@@ -33,8 +34,20 @@ class Product
         return $this->name;
     }
 
+    /**
+     * @return Money
+     */
     public function getPrice(): Money
     {
-        return $this->price;
+        return $this->money;
+    }
+
+    /**
+     * @return int
+     */
+
+    public function getId(): int
+    {
+        return $this->id;
     }
 }

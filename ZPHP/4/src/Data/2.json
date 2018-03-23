@@ -1,0 +1,8 @@
+{
+    "id": 2,
+    "name": "halo halo",
+    "price": {
+        "amount": "3",
+        "currency": "EUR"
+    }
+}
