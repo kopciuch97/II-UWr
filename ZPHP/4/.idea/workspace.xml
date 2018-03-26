@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd00f23d-fcea-4dd1-b09a-82de26b9024d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/DataProvider.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/DataSerializer.php" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/Product.php" afterPath="$PROJECT_DIR$/src/Product.php" />
-      <change beforePath="$PROJECT_DIR$/web/index.php" afterPath="$PROJECT_DIR$/web/index.php" />
-    </list>
+    <list default="true" id="cd00f23d-fcea-4dd1-b09a-82de26b9024d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/src/JSONFormatter.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+              <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -124,7 +118,7 @@
       <path value="$PROJECT_DIR$/vendor/silex/silex" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="224" />
     <option name="width" value="950" />
     <option name="height" value="565" />
@@ -208,15 +202,15 @@
       <updated>1521737935474</updated>
       <workItem from="1521737937362" duration="5507000" />
       <workItem from="1521744036944" duration="7859000" />
-      <workItem from="1521755663778" duration="12512000" />
+      <workItem from="1521755663778" duration="12558000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25878000" />
+    <option name="totallyTimeSpent" value="25924000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="224" y="0" width="1280" height="754" extended-state="6" />
+    <frame x="224" y="0" width="1280" height="754" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25769854" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -387,7 +381,7 @@
     <entry file="file://$PROJECT_DIR$/src/JSONFormatter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="1" />
           <folding />
         </state>
       </provider>
