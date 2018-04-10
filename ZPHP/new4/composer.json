@@ -1,0 +1,13 @@
+{
+    "name": "szyko/new4",
+    "description": "Practicing Silex and single responsibility of obcject",
+    "require": {
+        "silex/silex": "^2.2",
+        "moneyphp/money": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "" : "/src"
+        }
+    }
+}
