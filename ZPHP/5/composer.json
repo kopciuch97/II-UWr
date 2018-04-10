@@ -1,0 +1,7 @@
+{
+    "name": "szyko/5",
+    "type": "project",
+    "require": {
+        "moneyphp/money": "^3.1"
+    }
+}
