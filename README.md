@@ -36,7 +36,7 @@
 <ul>
   <li>Metody Programowania 2018 (wyk: Filip Sieczkowski+Marek Materzok+Maciej Piróg ćw+prac: Maciej Piróg)</li>
   <li>Bazy Danych (wyk: Piotr Wieczorek ćw+prac: Małgorzata Biernacka)</li>
-  <li>Algorytmy i struktury danych (wyk: Krzysztof Loryś ćw: Paweł Rzechonek) </li>
+  <li>Algorytmy i struktury danych (wyk: Krzysztof Loryś ćw: Łukasz Jeż) </li>
   <li>Projektowanie i implementacja zaawansowanych aplikacji w PHP (wyk: Mariusz Gil prac: Mariusz Gil)</li>
   <li>O ekonomii i gospodarce inaczej (wyk: Witold Kwaśnicki)</li>
   <li><a href="https://github.com/ProjektSOFA">Projekt S.O.F.A. projekt zespołowy w ramach działania w Kole Studentów Informatyki</a></li>
