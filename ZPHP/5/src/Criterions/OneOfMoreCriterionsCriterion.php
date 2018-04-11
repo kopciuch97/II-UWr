@@ -1,15 +1,13 @@
 <?php
-
 namespace src\Criterions;
 
 use src\Cart\Cart;
 
-class MoreCriterionsCriterion implements Criterion
-{
+class OneOfMoreCriterionsCriterion implements Criterion{
     private $criterions;
     
     /**
-     * MoreCriterionsCriterion constructor.
+     * OneOfMoreCriterionsCriterion constructor.
      * @param Criterion[] ...$criterions
      */
     public function __construct(Criterion ... $criterions)
@@ -19,16 +17,16 @@ class MoreCriterionsCriterion implements Criterion
     
     public function qualifyToPromote(Cart $cart): bool
     {
-        if ($cart->count() == 0) {
+        if($cart->count() == 0){
             return false;
-        } else {
-            foreach ($this->criterions as $criterion) {
-                if ($criterion->qualifyToPromote($cart) == false) {
-                    return false;
-                }
-            }
-            return true;
         }
+        foreach ($this->criterions as $criterion ){
+            if($criterion->qualifyToPromote($cart)){
+                return true;
+            }
+        }
+        return false;
     }
+    
     
 }

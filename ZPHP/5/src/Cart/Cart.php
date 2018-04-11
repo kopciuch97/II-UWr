@@ -38,8 +38,11 @@ class Cart implements Countable
         $totalAmount = new Money(0, new Currency('PLN'));
         
         foreach ($this->products as $product) {
+            
             $totalAmount = $totalAmount->add($product->getPrice());
-        }
+            
+            }
+        
         return $totalAmount;
     }
     
@@ -49,5 +52,13 @@ class Cart implements Countable
     public function count()
     {
         return count($this->products);
+    }
+    
+    /**
+     * @return array
+     */
+    public function getProducts(): array
+    {
+        return $this->products;
     }
 }
