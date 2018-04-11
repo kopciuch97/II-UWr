@@ -1,0 +1,7 @@
+{
+    "name": "szyko/6",
+    "type": "project",
+    "require": {
+        "phpunit/phpunit": "^7.1"
+    }
+}
