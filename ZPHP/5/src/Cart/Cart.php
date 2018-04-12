@@ -32,7 +32,7 @@ class Cart implements Countable
      */
     public function getTotalPrice(): Money
     {
-        if ($this->count()) {
+        if ($this->count() == 0) {
             return new Money(0, new Currency('PLN'));
         }
         $totalAmount = new Money(0, $this->products[0]->getPrice()->getCurrency());
