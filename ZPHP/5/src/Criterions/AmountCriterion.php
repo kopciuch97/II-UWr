@@ -1,8 +1,8 @@
 <?php
 
-namespace src\Criterions;
+namespace Criterions;
 
-use src\Cart\Cart;
+use Cart\Cart;
 
 class AmountCriterion implements Criterion{
     private $amount;

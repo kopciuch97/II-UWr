@@ -1,7 +1,7 @@
 <?php
-namespace src\Criterions;
-use src\Product\Product;
-use src\Cart\Cart;
+namespace Criterions;
+use Product\Product;
+use Cart\Cart;
 
 class ContainsCriterion implements Criterion{
     private $name;

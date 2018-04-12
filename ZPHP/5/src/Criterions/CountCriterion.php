@@ -1,6 +1,6 @@
 <?php
-namespace src\Criterions;
-use src\Cart\Cart;
+namespace Criterions;
+use Cart\Cart;
 class CountCriterion implements Criterion{
     private $count;
     

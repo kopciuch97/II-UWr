@@ -1,22 +1,22 @@
 <?php
 
-namespace src\Cart;
+namespace Cart;
 
 use Money\Money;
 use Money\Currency;
-use src\Product\Product;
+use Product\Product;
 use Countable;
 
 class Cart implements Countable
 {
-    private $products;
+    private $products = array();
     
     /**
      * Cart constructor.
      */
     public function __construct()
     {
-        $this->products = array();
+        //$this->products = array();
     }
     
     /**
@@ -35,7 +35,7 @@ class Cart implements Countable
         if ($this->count()) {
             return new Money(0, new Currency('PLN'));
         }
-        $totalAmount = new Money(0, new Currency('PLN'));
+        $totalAmount = new Money(0, $this->products[0]->getPrice()->getCurrency());
         
         foreach ($this->products as $product) {
             

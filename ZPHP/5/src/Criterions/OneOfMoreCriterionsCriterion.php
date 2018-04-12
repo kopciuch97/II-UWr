@@ -1,7 +1,7 @@
 <?php
-namespace src\Criterions;
+namespace Criterions;
 
-use src\Cart\Cart;
+use Cart\Cart;
 
 class OneOfMoreCriterionsCriterion implements Criterion{
     private $criterions;

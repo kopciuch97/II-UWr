@@ -1,5 +1,5 @@
 <?php
-namespace src\Product;
+namespace Product;
 
 use Money\Money;
 
