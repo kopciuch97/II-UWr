@@ -15,7 +15,7 @@ use Cart\Cart;
 
 $amountCrit = new AmountCriterion(1500);
 $containsCrit = new ContainsCriterion("TELEFON");
-$countCrit = new CountCriterion(5);
+$countCrit = new CountCriterion(6);
 $allOfCrits = new MoreCriterionsCriterion($amountCrit, $containsCrit, $countCrit);
 $oneOfCrits = new OneOfMoreCriterionsCriterion($amountCrit, $countCrit, $containsCrit);
 
@@ -33,6 +33,13 @@ $cart1->addProduct($product2);
 $cart1->addProduct($product3);
 $cart1->addProduct($product4);
 $cart1->addProduct($product5);
-echo $cart1->count() . PHP_EOL;
-echo $cart1->getTotalPrice()->getCurrency() . PHP_EOL;
-echo $cart1->getTotalPrice()->getAmount() . PHP_EOL;
+//echo $cart1->count() . PHP_EOL;
+//echo $cart1->getTotalPrice()->getCurrency() . PHP_EOL;
+//echo $cart1->getTotalPrice()->getAmount() . PHP_EOL;
+
+if ($countCrit->qualifyToPromote($cart1)){
+    echo 'tak' . PHP_EOL;
+}
+else{
+    echo 'nie' . PHP_EOL;
+}
