@@ -3,5 +3,13 @@
     "type": "project",
     "require": {
         "phpunit/phpunit": "^7.1"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "" : "src/"
+        }
     }
 }
+
+
