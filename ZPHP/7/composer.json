@@ -1,0 +1,13 @@
+{
+    "name": "szyko/7",
+    "require": {
+        "moneyphp/money": "^3.1"
+    },
+    
+    "autoload": {
+        "psr-4": {
+            "" : "src/"
+        }
+    }
+}
+
