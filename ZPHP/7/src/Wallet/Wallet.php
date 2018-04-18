@@ -1,15 +1,21 @@
 <?php
 
-namespace src\Wallet;
+namespace Wallet;
 
+use Events\ActivateWalletEvent;
+use Events\DeactivateWalletEvent;
+use Events\DepositToWalletEvent;
+use Events\WithdrawFromWalletEvent;
+use Exceptions\ActiveWalletException;
+use Exceptions\DifferentCurrenciesException;
+use Exceptions\InactiveWalletException;
+use Exceptions\NotEnoughMoneyInWalletException;
 use Money\Money;
 use Money\Currency;
-use InvalidArgumentException;
-use Exception;
-use src\EventProviders\EventProvider;
-use src\EventProviders\SerializedObjectsProvider;
-use src\EventSerializers\EventSerializer;
-use src\EventSerializers\FileEventSerializer;
+use EventProviders\EventProvider;
+use EventProviders\SerializedObjectsProvider;
+use EventSerializers\EventSerializer;
+use EventSerializers\FileEventSerializer;
 
 class Wallet
 {
@@ -26,6 +32,7 @@ class Wallet
      * @param string $currency
      * @param EventSerializer|null $serializer
      * @param EventProvider|null $provider
+     * @throws ActiveWalletException
      */
     public function __construct(string $name, string $currency,
                                 EventSerializer $serializer = NULL,
@@ -33,19 +40,30 @@ class Wallet
     {
         $this->name = $name;
         $this->balance = new Money(0, new Currency($currency));
-        if ($provider == NULL){
+        if (is_null($provider)){
             $this->provider = new SerializedObjectsProvider('/../../data/');
         }
-        if($serializer == NULL){
+        if(is_null($serializer)){
             $this->serializer = new FileEventSerializer('/../../data/');
         }
         $this->activate('Create new Wallet');
     }
     
     
-    public static function fromEvents(array $events): Wallet
+    public function fromEvents(): Wallet
     {
-        return new Wallet('test', 'test');
+        $events = $this->provider->provideEvents();
+        $wallet = new Wallet($this->name,
+                             $this->balance->getCurrency(),
+                             $this->serializer,
+                             $this->provider);
+        foreach ($events as $event){
+            $event->recreate($wallet);
+        }
+        
+        return $wallet;
+        
+        
     }
     
     public function deposit(Money $moneyToDeposit): void
@@ -53,12 +71,12 @@ class Wallet
         if ($this->isActive) {
             if ($moneyToDeposit->isSameCurrency($this->balance)) {
                 $this->balance->add($moneyToDeposit);
-//                TODO: MAKE DepositEventObj & Serialize
+                $this->serializer->serialize(new DepositToWalletEvent($moneyToDeposit));
             } else {
-                throw new InvalidArgumentException('Currency you want is different than in Wallet!');
+                throw new DifferentCurrenciesException();
             }
         } else {
-            throw new Exception('Your Wallet is inactive! Contact our support.');
+            throw new InactiveWalletException();
         }
     }
     
@@ -68,15 +86,15 @@ class Wallet
             if ($moneyToWithdraw->isSameCurrency($this->balance)) {
                 if ($moneyToWithdraw->lessThanOrEqual($this->balance)) {
                     $this->balance->subtract($moneyToWithdraw);
-//                    TODO: MAKE WithdrawEventObj & Serialize
+                    $this->serializer->serialize(new WithdrawFromWalletEvent($moneyToWithdraw));
                 } else {
-                    throw new InvalidArgumentException('You dont have enough money to withdraw!');
+                    throw new NotEnoughMoneyInWalletException();
                 }
             } else {
-                throw new InvalidArgumentException('Currency you want is different than in Wallet!');
+                throw new DifferentCurrenciesException();
             }
         } else {
-            throw new Exception('Your Wallet is inactive! Contact our support.');
+            throw new InactiveWalletException();
         }
     }
     
@@ -84,10 +102,10 @@ class Wallet
     {
         if($this->isActive){
             $this->isActive = false;
-//            TODO : Make DeactivateEventObj & Serialize
+            $this->serializer->serialize(new DeactivateWalletEvent($reason));
         }
         else{
-//            TODO: Exception deactivate deavtive wallet
+            throw new InactiveWalletException('You cannot deactivate inactive wallet!');
         }
     }
     
@@ -95,10 +113,10 @@ class Wallet
     {
         if($this->isActive == false){
             $this->isActive = true;
-//            TODO: Make ActivateEventObj & Serialize
+            $this->serializer->serialize(new ActivateWalletEvent($reason));
         }
         else{
-//            TODO: Exception activate active wallet
+            throw new ActiveWalletException('You cannot activate active wallet!');
         }
     }
     
@@ -106,7 +124,5 @@ class Wallet
     {
         return $this->balance;
     }
-    
-    // ...
     
 }

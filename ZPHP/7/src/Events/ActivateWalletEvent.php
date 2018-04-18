@@ -1,7 +1,7 @@
 <?php
-namespace src\Events;
+namespace Events;
 
-use src\Wallet\Wallet;
+use Wallet\Wallet;
 
 class ActivateWalletEvent implements WalletEvent {
     private $reason;

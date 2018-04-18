@@ -1,8 +1,8 @@
 <?php
 
-namespace src\EventSerializers;
+namespace EventSerializers;
 
-use src\Events\WalletEvent;
+use Events\WalletEvent;
 
 class FileEventSerializer implements EventSerializer{
     private $RelativePath;
@@ -24,6 +24,6 @@ class FileEventSerializer implements EventSerializer{
     
     private function getNextId() : int
     {
-        return count(scandir($this->RelativePath)) - 2;
+        return count(scandir($this->RelativePath)) - 1;
     }
 }

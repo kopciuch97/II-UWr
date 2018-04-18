@@ -1,8 +1,8 @@
 <?php
-namespace src\Events;
+namespace Events;
 
 use Money\Money;
-use src\Wallet\Wallet;
+use Wallet\Wallet;
 
 class WithdrawFromWalletEvent implements WalletEvent {
     private $amount;

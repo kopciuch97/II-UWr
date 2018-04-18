@@ -1,8 +1,8 @@
 <?php
 
-namespace src\EventSerializers;
+namespace EventSerializers;
 
-use src\Events\WalletEvent;
+use Events\WalletEvent;
 
 interface EventSerializer{
     public function serialize(WalletEvent $event);

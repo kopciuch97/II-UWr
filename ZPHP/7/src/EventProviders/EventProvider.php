@@ -1,8 +1,7 @@
 <?php
 
-namespace src\EventProviders;
+namespace EventProviders;
 
-use src\Events\WalletEvent;
 
 interface EventProvider{
     public function provideEvents() : array;

@@ -1,6 +1,6 @@
 <?php
 
-namespace src\EventProviders;
+namespace EventProviders;
 
 
 class SerializedObjectsProvider implements EventProvider{
