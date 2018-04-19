@@ -1,6 +1,7 @@
 <?php
 
 namespace EventProviders;
+use Wallet\Wallet;
 
 
 class SerializedObjectsProvider implements EventProvider{

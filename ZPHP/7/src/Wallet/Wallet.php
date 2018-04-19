@@ -13,10 +13,7 @@ use Exceptions\InactiveWalletException;
 use Exceptions\NotEnoughMoneyInWalletException;
 use Money\Money;
 use Money\Currency;
-use EventProviders\EventProvider;
-use EventProviders\SerializedObjectsProvider;
-use EventSerializers\EventSerializer;
-use EventSerializers\FileEventSerializer;
+
 
 class Wallet
 {
@@ -34,107 +31,97 @@ class Wallet
      * @param bool|null $isRecovering
      * @throws ActiveWalletException
      */
-
+    
     public function __construct(string $name,
-                                strgiing $currency,
-                                bool $isActive,
+                                string $currency,
+                                bool $isActive = null,
                                 bool $isRecovering = null)
-
+    
     {
         $this->name = $name;
         $this->balance = new Money(0, new Currency($currency));
-        if(is_null($isActive)){
-            $this->activate('Create new Wallet');
-        }
         
-        if (is_null($isRecovering) == true) {
-            $this->isRecovering = true;
+        if (!(is_null($isActive) && $isRecovering == true)) {
+            if (is_null($isActive)) {
+                $this->activate('Create new Wallet');
+            }
         }
-        
     }
     
     
-    public function fromEvents(): Wallet
+    public static function fromEvents(array $events): Wallet
     {
-        $events = $this->provider->provideEvents();
-        $wallet = new Wallet($this->name,
-            $this->balance->getCurrency(),
-            $this->serializer,
-            $this->provider,
-            true,
-            true);
-        foreach ($events as $event) {
-            if ($event instanceof WalletEvent) {
-                $event->recreate($wallet);
+        if($events[0] instanceof WalletEvent){
+            $wallet = $events[0]->recreate(new Wallet('',''));
+        }
+        else{
+            throw new \InvalidArgumentException();
+        }
+        
+        for($i = 1; $i < count($events); $i++){
+            if($events[$i] instanceof WalletEvent){
+                $events[$i]->recreate($wallet);
             }
         }
-        $wallet->changeRecoveringState();
         return $wallet;
     }
     
-    public function deposit(Money $moneyToDeposit): void
+    public function deposit(Money $moneyToDeposit): WalletEvent
     {
         if ($this->isActive) {
             if ($moneyToDeposit->isSameCurrency($this->balance)) {
                 $this->balance = $this->balance->add($moneyToDeposit);
                 if (!($this->isRecovering)) {
-                    $this->serializer->serialize(new DepositToWalletEvent($moneyToDeposit));
+                    return new DepositToWalletEvent($moneyToDeposit);
                 }
-            }
-            else {
+            } else {
                 throw new DifferentCurrenciesException();
             }
-        }
-        else {
+        } else {
             throw new InactiveWalletException();
         }
     }
     
-    public function withdraw(Money $moneyToWithdraw): void
+    public function withdraw(Money $moneyToWithdraw): WalletEvent
     {
         if ($this->isActive) {
             if ($moneyToWithdraw->isSameCurrency($this->balance)) {
                 if ($moneyToWithdraw->lessThanOrEqual($this->balance)) {
                     $this->balance = $this->balance->subtract($moneyToWithdraw);
                     if (!($this->isRecovering)) {
-                        $this->serializer->serialize(new WithdrawFromWalletEvent($moneyToWithdraw));
+                        return new WithdrawFromWalletEvent($moneyToWithdraw);
                     }
-                }
-                else {
+                } else {
                     throw new NotEnoughMoneyInWalletException();
                 }
-            }
-            else {
+            } else {
                 throw new DifferentCurrenciesException();
             }
-        }
-        else {
+        } else {
             throw new InactiveWalletException();
         }
     }
     
-    public function deactivate(string $reason): void
+    public function deactivate(string $reason): WalletEvent
     {
         if ($this->isActive) {
             $this->isActive = false;
             if (!($this->isRecovering)) {
-                $this->serializer->serialize(new DeactivateWalletEvent($reason));
+                return new DeactivateWalletEvent($reason);
             }
-        }
-        else {
+        } else {
             throw new InactiveWalletException('You cannot deactivate inactive wallet!');
         }
     }
     
-    public function activate(string $reason): void
+    public function activate(string $reason): WalletEvent
     {
         if ($this->isActive == false) {
             $this->isActive = true;
             if (!($this->isRecovering)) {
-                $this->serializer->serialize(new ActivateWalletEvent($reason));
+                return new ActivateWalletEvent($reason);
             }
-        }
-        else {
+        } else {
             throw new ActiveWalletException('You cannot activate active wallet!');
         }
     }
@@ -144,12 +131,12 @@ class Wallet
         return $this->balance;
     }
     
-    public function changeRecoveringState()
+    public function changeRecoveringState(): void
     {
         $this->isRecovering = !($this->isRecovering);
     }
-
-    public function getName() :string
+    
+    public function getName(): string
     {
         return $this->name;
     }

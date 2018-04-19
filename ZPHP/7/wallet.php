@@ -3,20 +3,19 @@ require_once 'vendor/autoload.php';
 use Wallet\Wallet;
 use Money\Money;
 use Money\Currency;
-/*$wallet = new Wallet('w1', 'PLN', null, null, false, false);
+use EventSerializers\FileEventSerializer;
 
-$wallet->deposit(new Money(10, new Currency('PLN')));
-$wallet->deposit(new Money(10, new Currency('PLN')));
-$wallet->deposit(new Money(10, new Currency('PLN')));
-$wallet->withdraw(new Money(10, new Currency('PLN')));
-*/
 
-//$wallet2 = $wallet->fromEvents();
-//echo $wallet2->getBalance()->getAmount() . PHP_EOL;
+$wallet1 = new Wallet('wallet1', 'PLN');
+$wallet1Serializer = new FileEventSerializer($wallet1->getName());
+$wallet1Serializer->serialize($wallet1->deposit(new Money(10, new Currency('PLN'))));
+$wallet1Serializer->serialize($wallet1->deposit(new Money(20, new Currency('PLN'))));
+$wallet1Serializer->serialize($wallet1->deposit(new Money(30, new Currency('PLN'))));
 
 
 
-foreach((array_diff(scandir(__DIR__ . '/data'), array('..', '.'))) as $file){
-    unlink(__DIR__ . '/data/' . $file);
-};
+
+//foreach((array_diff(scandir(__DIR__ . '/data'), array('..', '.'))) as $file){
+//    unlink(__DIR__ . '/data/' . $file);
+//};
 
