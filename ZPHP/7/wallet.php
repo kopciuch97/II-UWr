@@ -3,16 +3,16 @@ require_once 'vendor/autoload.php';
 use Wallet\Wallet;
 use Money\Money;
 use Money\Currency;
-$wallet = new Wallet('w1', 'PLN');
+/*$wallet = new Wallet('w1', 'PLN', null, null, false, false);
 
 $wallet->deposit(new Money(10, new Currency('PLN')));
 $wallet->deposit(new Money(10, new Currency('PLN')));
 $wallet->deposit(new Money(10, new Currency('PLN')));
 $wallet->withdraw(new Money(10, new Currency('PLN')));
+*/
 
-
-$wallet2 = $wallet->fromEvents();
-echo $wallet2->getBalance()->getAmount() . PHP_EOL;
+//$wallet2 = $wallet->fromEvents();
+//echo $wallet2->getBalance()->getAmount() . PHP_EOL;
 
 
 

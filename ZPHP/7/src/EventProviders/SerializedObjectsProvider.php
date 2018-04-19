@@ -4,18 +4,19 @@ namespace EventProviders;
 
 
 class SerializedObjectsProvider implements EventProvider{
-    private $RelativePath;
+    private $Path;
     
-    public function __construct($RelativePath)
+    public function __construct()
     {
-        $this->RelativePath = __DIR__ . $RelativePath;
+        $this->Path = __DIR__ . '/../../data/';
     }
     
-    public function provideEvents() : array
+    public function provideEvents(Wallet $wallet) : array
     {
+        $ObjectDirectoryPath = $this->Path . $wallet->getName() . '/';
         $objects = array();
-        foreach (array_diff(scandir($this->RelativePath), array('..', '.')) as $file) {
-            array_push($objects, unserialize(file_get_contents($this->RelativePath . $file)));
+        foreach (array_diff(scandir($ObjectDirectoryPath), array('..', '.')) as $file) {
+            array_push($objects, unserialize(file_get_contents($ObjectDirectoryPath . $file)));
         }
         sort($objects);
         return $objects;

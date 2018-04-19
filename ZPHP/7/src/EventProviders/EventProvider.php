@@ -3,6 +3,8 @@
 namespace EventProviders;
 
 
+use Wallet\Wallet;
+
 interface EventProvider{
-    public function provideEvents() : array;
+    public function provideEvents(Wallet $wallet) : array;
 }

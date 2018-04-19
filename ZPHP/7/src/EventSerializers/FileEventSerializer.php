@@ -5,25 +5,27 @@ namespace EventSerializers;
 use Events\WalletEvent;
 
 class FileEventSerializer implements EventSerializer{
-    private $RelativePath;
+    private $Path;
+    private $walletName;
     
     /**
      * FileEventSerializer constructor.
      * @param $RelativePath
      */
-    public function __construct($RelativePath)
+    public function __construct(string $walletName)
     {
-        $this->RelativePath = __DIR__ . $RelativePath;
+        $this->Path = __DIR__ . '/../../data/';
+        $this->walletName = $walletName;
     }
     
     
     public function serialize(WalletEvent $event) : void
     {
-        file_put_contents($this->RelativePath . $this->getNextId(), serialize($event));
+        file_put_contents($this->Path . $walletName . '/' . $this->getNextId(), serialize($event));
     }
     
     private function getNextId() : int
     {
-        return count(scandir($this->RelativePath)) - 1;
+        return count(scandir($this->Path)) - 1;
     }
 }

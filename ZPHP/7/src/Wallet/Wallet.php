@@ -24,40 +24,30 @@ class Wallet
     private $name;
     private $balance;
     private $isActive;
-    private $serializer;
-    private $provider;
     private $isRecovering;
     
     /**
      * Wallet constructor.
      * @param string $name
      * @param string $currency
-     * @param EventSerializer|null $serializer
-     * @param EventProvider|null $provider
      * @param bool $isActive
-     * @param bool $isRecovering
+     * @param bool|null $isRecovering
      * @throws ActiveWalletException
      */
 
-    public function __construct(string $name, string $currency,
-                                EventSerializer $serializer = null,
-                                EventProvider $provider = null,
-                                bool $isActive = false,
-                                bool $isRecovering = false)
+    public function __construct(string $name,
+                                strgiing $currency,
+                                bool $isActive,
+                                bool $isRecovering = null)
+
     {
         $this->name = $name;
         $this->balance = new Money(0, new Currency($currency));
-        if($isActive == false){
+        if(is_null($isActive)){
             $this->activate('Create new Wallet');
         }
-        if (is_null($provider)) {
-            $this->provider = new SerializedObjectsProvider('/../../data/');
-        }
-        if (is_null($serializer)) {
-            $this->serializer = new FileEventSerializer('/../../data/');
-        }
         
-        if ($isRecovering == true) {
+        if (is_null($isRecovering) == true) {
             $this->isRecovering = true;
         }
         
@@ -157,5 +147,10 @@ class Wallet
     public function changeRecoveringState()
     {
         $this->isRecovering = !($this->isRecovering);
+    }
+
+    public function getName() :string
+    {
+        return $this->name;
     }
 }
