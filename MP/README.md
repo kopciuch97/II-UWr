@@ -7,21 +7,21 @@ Code here
 Opis here
 ***
 
-###Wykład 2###
+### Wykład 2 ###
 ```scheme
 Code here
 ```
 Opis here
 ***
 
-###Wykład 3###
+### Wykład 3 ###
 ```scheme
 Code here
 ```
 Opis here
 ***
 
-###Wykład 4###
+### Wykład 4 ###
 
 ```scheme
 Code here
@@ -29,7 +29,7 @@ Code here
 Opis here
 ***
 
-###Wykład 5###
+### Wykład 5 ###
 ```scheme
 Code here
 ```
