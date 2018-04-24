@@ -19,7 +19,7 @@ class SerializedObjectsProvider implements EventProvider{
         foreach (array_diff(scandir($ObjectDirectoryPath), array('..', '.')) as $file) {
             array_push($objects, unserialize(file_get_contents($ObjectDirectoryPath . $file)));
         }
-        sort($objects);
+       // sort($objects);
         return $objects;
     }
 }

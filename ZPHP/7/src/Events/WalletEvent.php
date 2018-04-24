@@ -5,5 +5,5 @@ namespace Events;
 use Wallet\Wallet;
 
 interface WalletEvent{
-    public function recreate(Wallet $wallet) ;
+    public function recreate(Wallet $wallet);
 }
