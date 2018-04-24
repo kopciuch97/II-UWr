@@ -1,7 +1,6 @@
 ## Ważne procedury/informacje, które warto znać przed egzaminem ##
 ***
 ###Wykład 1###
-**Przykladowa notatka**
 ```scheme
 Code here
 ```
@@ -9,7 +8,6 @@ Opis here
 ***
 
 ###Wykład 2###
-**Przykladowa notatka**
 ```scheme
 Code here
 ```
@@ -17,7 +15,6 @@ Opis here
 ***
 
 ###Wykład 3###
-**Przykladowa notatka**
 ```scheme
 Code here
 ```
@@ -25,7 +22,7 @@ Opis here
 ***
 
 ###Wykład 4###
-**Przykladowa notatka**
+
 ```scheme
 Code here
 ```
@@ -33,7 +30,6 @@ Opis here
 ***
 
 ###Wykład 5###
-**Przykladowa notatka**
 ```scheme
 Code here
 ```
