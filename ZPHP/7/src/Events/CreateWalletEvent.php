@@ -16,4 +16,12 @@ class CreateWalletEvent implements WalletEvent {
     {
         return new Wallet($this->name, $this->currency, null, true );
     }
+    
+    public function getName(){
+        return $this->name;
+    }
+    
+    public function getCurrency(){
+        return $this->currency;
+    }
 }

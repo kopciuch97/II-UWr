@@ -17,12 +17,14 @@ class FileEventSerializer implements EventSerializer{
     }
     
     
-    public function serialize(WalletEvent $event) : void
+    public function serialize(array $events) : void
     {
         if (!file_exists($this->Path)) {
             mkdir($this->Path, 0777, true);
         }
-        file_put_contents($this->Path  . $this->getNextId(), serialize($event));
+        foreach($events as $event) {
+            file_put_contents($this->Path . $this->getNextId(), serialize($event));
+        }
     }
     
     private function getNextId() : int

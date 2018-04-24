@@ -22,5 +22,8 @@ class DepositToWalletEvent implements WalletEvent {
         $wallet->deposit($this->amount);
     }
     
+    public function getAmount(){
+        return $this->amount;
+    }
     
 }
