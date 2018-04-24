@@ -1,6 +1,6 @@
 ## Ważne procedury/informacje, które warto znać przed egzaminem ##
 ***
-###Wykład 1###
+### Wykład 1 ###
 ```scheme
 Code here
 ```
