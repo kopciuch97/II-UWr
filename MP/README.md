@@ -1,5 +1,46 @@
-### Ważne procedury/informacje, które warto znać przed egzaminem ###
+## Ważne procedury/informacje, które warto znać przed egzaminem ##
+***
+###Wykład 1###
+**Przykladowa notatka**
+```scheme
+Code here
+```
+Opis here
+***
 
+###Wykład 2###
+**Przykladowa notatka**
+```scheme
+Code here
+```
+Opis here
+***
+
+###Wykład 3###
+**Przykladowa notatka**
+```scheme
+Code here
+```
+Opis here
+***
+
+###Wykład 4###
+**Przykladowa notatka**
+```scheme
+Code here
+```
+Opis here
+***
+
+###Wykład 5###
+**Przykladowa notatka**
+```scheme
+Code here
+```
+Opis here
+
+
+***
 **Append**
 ```scheme
 (define (append xs ys)
@@ -16,6 +57,7 @@
       (and (pair? x)
            (list? (cdr x)))))
 ```
+***
 
 **Map**
 ```scheme
@@ -35,7 +77,7 @@
       (op (car xs)
           (fold-right op nval (cdr xs)))))
 ```
-
+***
 **Flatten**
 ```scheme
 (define (flatten t)
