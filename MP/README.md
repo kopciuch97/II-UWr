@@ -65,6 +65,15 @@ Opis here
 ```
 ***
 
+**Reverse**
+```scheme
+(define (reverse xs)
+  (if (null? xs)
+      null
+      (append (reverse (cdr xs)) (list (car xs)))))
+```
+***
+
 **Foldr**
 ```scheme
 (define (fold-right op nval xs)
