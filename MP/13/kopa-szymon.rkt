@@ -1,0 +1,99 @@
+#lang racket
+
+(require racklog)
+
+;; transpozycja tablicy zakodowanej jako lista list
+(define (transpose xss)
+  (cond [(null? xss) xss]
+        ((null? (car xss)) (transpose (cdr xss)))
+        [else (cons (map car xss)
+                    (transpose (map cdr xss)))]))
+
+;; procedura pomocnicza
+;; tworzy listę n-elementową zawierającą wyniki n-krotnego
+;; wywołania procedury f
+(define (repeat-fn n f)
+  (if (eq? 0 n) null
+      (cons (f) (repeat-fn (- n 1) f))))
+
+;; tworzy tablicę n na m elementów, zawierającą świeże
+;; zmienne logiczne
+(define (make-rect n m)
+  (repeat-fn m (lambda () (repeat-fn n _))))
+
+;; predykat binarny
+;; (%row-ok xs ys) oznacza, że xs opisuje wiersz (lub kolumnę) ys
+
+(define %row-ok
+  (%rel (line part rest line2 line3 line4)
+        [(null null) !]
+        [(line (cons part rest))
+         (%/= rest null)
+         (%add-space line line2)
+         (%part-ok line2 line3 part)
+         (%force-space line3 line4)
+         (%row-ok line4 rest)]
+        [(line (cons part rest))
+         (%= rest null)
+         (%add-space line line2)
+         (%part-ok line2 line3 part)
+         (%add-space line3 line4)
+         (%row-ok line4 null)]
+        
+  ))
+
+(define %add-space
+  (%rel (line restline)
+        [(line line)]
+        [((cons '_ line) restline)
+         (%add-space line restline)]
+        ))
+
+(define %force-space
+  (%rel (line)
+        [((cons '_ line) line)]
+        ))
+
+(define %part-ok
+  (%rel (line restline n n1)
+        [(line line 0)]
+        [((cons '* line) restline n)
+         (%> n 0)
+         (%is n1 (- n 1))
+         (%part-ok line restline n1)]
+        ))
+
+(define %rows-ok
+  (%rel (x xs y ys)
+        [(null null)]
+        [((cons x xs) (cons y ys))
+         (%row-ok x y)
+         (%rows-ok xs ys)]
+        ))
+
+;; funkcja rozwiązująca zagadkę
+(define (solve rows cols)
+  (define board (make-rect (length cols) (length rows)))
+  (define tboard (transpose board))
+  (define ret (%which (xss trxss) 
+                      (%= xss board)
+                      (%= trxss tboard)
+                      (%rows-ok xss rows)
+                      (%rows-ok trxss cols)
+                      ))
+  (and ret (cdar ret)))
+
+; testy
+(equal? (solve '((2) (1) (1)) '((1 1) (2)))
+        '((* *)
+          (_ *)
+          (* _)))
+
+(equal? (solve '((2) (2 1) (1 1) (2)) '((2) (2 1) (1 1) (2)))
+        '((_ * * _)
+          (* * _ *)
+          (* _ _ *)
+          (_ * * _)))
+
+;wspolpraca z Wojciech Goska.
+
