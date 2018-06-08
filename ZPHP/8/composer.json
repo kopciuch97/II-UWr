@@ -1,0 +1,8 @@
+{
+    "name": "szyko/8",    
+    "autoload": {
+        "psr-4": {
+            "" : "src/"
+        }
+    }
+}
